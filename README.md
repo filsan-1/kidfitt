@@ -1,12 +1,11 @@
-Got it! If you're also using `requirements.txt`, `collectstatic`, and `migrate` for a Django application (or any Python web app that requires migrations and static files handling), let's update your README to include those steps and other important instructions.
 
-Here’s a revised README that includes the `requirements.txt`, `collectstatic`, and `migrate` steps:
 
 ---
 
 # KidFitt
 
-KidFitt is a Python-based web application that aims to [describe the app's purpose or functionality]. This app uses SQLite as the database and Docker for containerization. It follows the common Django workflow for setting up and managing static files and database migrations.
+KidFitt is a Python-based web application that aims to help parents check and monitor there kids eating habit
+]. This app uses SQLite as the database and Docker for containerization. It follows the common Django workflow for setting up and managing static files and database migrations.
 
 ## Prerequisites
 
