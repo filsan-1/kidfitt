@@ -171,6 +171,4 @@ Make sure that the database path in the `.env` file is correctly set and that it
 
 If you don’t have a `.env` file, the app may still run with default settings, but ensure that required environment variables are set in the Dockerfile or directly within the Docker Compose YAML.
 
----
 
-Let me know if you need further adjustments or more specific instructions based on the structure of your app!
