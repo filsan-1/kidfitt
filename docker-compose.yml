@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .  # Ensure this points to the correct directory
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app  # Mount the current directory to the /app directory inside the container
+    environment:
+      - FLASK_APP=manage.py  # If you're using Flask, specify the entry point file here (e.g., manage.py)
+
+
