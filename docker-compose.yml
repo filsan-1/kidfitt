@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./user_api  # Update to point to the 'user_api' folder
+    container_name: django-api  # The container will be named 'django-api'
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - ./user_api:/app  # Mount the 'user_api' directory to the container
+      - ./user_api/db.sqlite3:/app/db.sqlite3  # Mount the SQLite database file for persistence
+    ports:
+      - "8000:8000"  # Expose the backend on port 8000
+    networks:
+      - app-network
+    environment:
+      - DEBUG=True  # Optional: Set Django to run in DEBUG mode
+      - DJANGO_SECRET_KEY=your-django-secret-key  # Optional: Set your Django secret key here
+
+  frontend:
+    build:
+      context: ./frontend  # Point to the frontend folder where Dockerfile is located
+    container_name: react-frontend  # The container will be named 'react-frontend'
+    ports:
+      - "80:80"  # Expose React frontend on port 80
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_API_URL=http://api:8000  # API URL for React frontend to communicate with the backend
+
+networks:
+  app-network:
+    driver: bridge
+
